@@ -3,6 +3,11 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(status='published')
+
+
 class Post(models.Model):
     STATUS_CHOICES = (
         ('draft', 'Draft'),
@@ -18,6 +23,9 @@ class Post(models.Model):
                               default='draft', max_length=10)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='blog_posts')
+
+    objects = models.Manager()
+    published = PublishedManager()
 
     class Meta:
         ordering = ['-publish']
