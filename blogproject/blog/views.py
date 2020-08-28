@@ -24,3 +24,7 @@ def post_detail(request, year, month, day, slug):
                              slug=slug
                              )
     return render(request, 'blog/post/detail.html', {'post': post})
+
+
+def post_share(request, post_id):
+    pass
