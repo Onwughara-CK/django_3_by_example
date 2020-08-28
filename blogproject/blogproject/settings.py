@@ -125,6 +125,6 @@ STATIC_URL = '/static/'
 
 EMAIL_HOST = 'smtp.mail.yahoo.com'
 EMAIL_HOST_USER = 'kelechicollins93@yahoo.com'
-EMAIL_HOST_PASSWORD = 'cmpztawzbohdqnpx'
+EMAIL_HOST_PASSWORD = 'c'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
